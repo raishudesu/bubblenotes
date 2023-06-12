@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Color Picker!</title>
+</head>
+<body>
+    <div class="picker-container">
+        <h1>Color Picker</h1>
+        <input type="color" id="colorPicker" >
+        <div id="colorPreview"></div>
+        <div class="buttons">
+            <button onclick="getBgColor()">Submit</button>
+            <button onclick="resetColorPicker()">Reset</button>
+        </div>
+        <h2>RGB Value</h2>
+        <div class="result"></div>
+    </div>  
+    <script src="script.js"></script>
+</body>
+</html>
