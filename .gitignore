@@ -1,1 +1,5 @@
-firebaseConfig.js/
+firebaseConfig.js
+.firebase/
+public/
+.firebaserc
+firebase.json
