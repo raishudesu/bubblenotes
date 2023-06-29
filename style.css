@@ -224,7 +224,37 @@ body{
     border: solid 2px black;
     text-align: center;
   }
-  .button{
-
+  .forgot-password {
+    margin-top: 5px;
+    margin-left: 2px;
+    width: 100%;
+  }
+  .google-signin{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+ #googleSignInButton{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  background: #242526;
+  border: none;
+  border-radius: 50%;
+  transition: 0.2s;
+ }
+ #googleSignInButton:hover{
+  transform: scale(1.05);
+  transition: 0.2s;
+ }
+ 
+  
+  .signup-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
   }
   

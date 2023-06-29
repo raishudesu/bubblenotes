@@ -31,9 +31,22 @@
                 <label for="">Password:</label>
                 <input type="password" id="userPassword" required>
             </form>
+            <div class="forgot-password">
+                <a href="">Forgot password?</a>
+            </div>
             <div class="buttons">
                 <button id="signInButton">Sign In</button>
                 <button id="signUpButton">Sign Up</button>
+            </div>
+            <div class="google-signin">
+                <p>Sign In With Google</p>
+                <button id="googleSignInButton" type="button" onclick="userGoogleSignIn()">
+                    <object data="assets/google-color-svgrepo-com.svg" width="30px" height="30px"></object>
+                </button>
+                
+            </div>
+            <div class="signup-container">
+                <p>Don't have an account? <a id="signup">Sign Up</a></p>
             </div>
         </div>
     </div>

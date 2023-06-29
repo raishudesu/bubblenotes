@@ -4,8 +4,12 @@ import {
     createUserWithEmailAndPassword, 
     signInWithEmailAndPassword,
     onAuthStateChanged,
+    GoogleAuthProvider,
+    signInWithPopup,
     signOut
   } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js"
+
+const provider = new GoogleAuthProvider();
 
 const auth = getAuth(app);
 const userEmail = document.querySelector('#userEmail');
@@ -15,6 +19,35 @@ const colorPicker = document.querySelector('.picker-container');
 const signUpButton = document.querySelector('#signUpButton');
 const signInButton = document.querySelector('#signInButton');
 const signOutButton = document.querySelector('#signOutButton');
+const googleSignInButton = document.querySelector('#signup');
+
+const userGoogleSignIn = () => {
+  signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    // IdP data available using getAdditionalUserInfo(result)
+    // ...
+    console.log(result);
+    alert('Google Sign In Successful!');
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    console.log(errorCode + errorMessage);
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+  });
+}
+
+
+
 
 const checkAuthState = async() => {
     onAuthStateChanged(auth, user => {
@@ -100,6 +133,11 @@ const userSignOut = async() => {
     showConfirmButton: true
 })
 }
+
+googleSignInButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  userGoogleSignIn();
+});
 
 signUpButton.addEventListener('click', (e) => {
     e.preventDefault();
